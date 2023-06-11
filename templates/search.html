@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search Image By Name - Taksha Sachin Thosani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h3 {
+            color: #333;
+        }
+        
+        h4 {
+            color: #666;
+        }
+        
+        table {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        center {
+            margin-top: 30px;
+        }
+        
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        input[type="text"] {
+            padding: 8px;
+            width: 250px;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        div {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        img {
+            max-width: 500px;
+            max-height: 600px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h3>CSE 6332 - Summer '23 - Section 002 - Assignment-01</h3>
+    <h4>Taksha Sachin Thosani - 1002086312</h4>
+</center>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Page</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><a href="/">Home</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="/upload">Upload CSV File</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><a href="/search">Search Image by Name</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="/searchbysal">All Images Where Salary is Less Than $99,000</a></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="/remove">Remove Record</a></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><a href="/edit">Edit Details</a></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><a href="/uploadpic">Upload Image</a></td>
+    </tr>
+</table>
+
+<form action="/searchimage" method="post">
+    <input type="text" name="name" placeholder="Enter Name here..">
+    <input type="submit" value="Search">
+</form>
+
+<div>
+    {% if message %}
+        <img src="{{ image_path }}" alt="Preview" width="500" height="600">
+    {% endif %}
+    {% if error %}
+        {{ error }}
+    {% endif %}
+</div>
+
+</body>
+</html>
