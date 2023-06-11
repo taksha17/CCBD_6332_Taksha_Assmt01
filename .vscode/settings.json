@@ -1,0 +1,13 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/74f47a0f-10e1-4c5e-b161-e6a39f5b86d8/resourceGroups/ccbd_txt6312/providers/Microsoft.Web/sites/txt6312webapp",
+    "appService.deploySubpath": "CCBD_6332_Taksha_Assmt01",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
+}
