@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload Validation - Taksha Sachin Thosani</title>
+    <title>Remove Details Validation - Taksha Sachin Thosani</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,10 +13,6 @@
         
         h4 {
             color: #666;
-        }
-        
-        h5 {
-            color: #007bff;
         }
         
         table {
@@ -96,7 +92,12 @@
 </table>
 
 <div>
-    <h5>File Uploaded Successfully!</h5>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
 </div>
 
 </body>

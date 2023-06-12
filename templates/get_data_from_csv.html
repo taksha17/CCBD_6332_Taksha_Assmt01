@@ -1,37 +1,7 @@
-<!-- <!DOCTYPE html>
-<head>
-    <title>Remove Details Validation - Taksha Sachin Thosani</title>
-</head>
-<body>
-    <center>
-        <h3>CSE 6332 - Summer '23 - Section 002 - Assignment-01</h3>
-        <h4>Taksha Sachin Thosani - 1002086312</h4>
-    </center><br/><br/>
-<table style="border: 1px solid black; padding: 8px;">
-    <tr><td>1</td><td><a href="/">Home</a></td></tr>
-    <tr><td>2</td><td><a href="/upload">Upload CSV File.</a></td></tr>
-    <tr><td>3</td><td><a href="/search">Search image by Name.</a></td></tr>
-    <tr><td>4</td><td><a href="/searchbysal">All images where Salary is less then 99000.</a></td></tr>
-    <tr><td>5</td><td><a href="/remove">Remove Record.</a></td></tr>
-    <tr><td>6</td><td><a href="/edit">Edit Details.</a></td></tr>
-    <tr><td>7</td><td><a href="/uploadpic">Upload Image.</a></td></tr>
-</table><br/><br/><br/>
-
- {%if message%}
-  {{message}}
-    {%endif%}
-    {%if error%}
-        {{error}}
-    {%endif%}
-
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Remove Details Validation - Taksha Sachin Thosani</title>
+    <title>File Upload Validation - Taksha Sachin Thosani</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,6 +13,10 @@
         
         h4 {
             color: #666;
+        }
+        
+        h5 {
+            color: #007bff;
         }
         
         table {
@@ -122,12 +96,29 @@
 </table>
 
 <div>
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+    <h5>File Uploaded Successfully!</h5>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>State</th>
+            <th>Salary</th>
+            <th>Grade</th>
+            <th>Room</th>
+            <th>Picture</th>
+            <th>Keyword</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['Name'] }}</td>
+            <td>{{ row['State'] }}</td>
+            <td>{{ row['Salary'] }}</td>
+            <td>{{ row['Grade'] }}</td>
+            <td>{{ row['Room'] }}</td>
+            <td>{{ row['Picture'] }}</td>
+            <td>{{ row['Keyword'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 
 </body>
